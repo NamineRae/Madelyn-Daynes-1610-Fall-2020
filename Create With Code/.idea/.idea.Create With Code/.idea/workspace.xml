@@ -11,9 +11,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/Services/Common/Resources.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/UI/PackageGroup.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Challenge 1/Scripts/PlayerControllerX.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FollowPlayer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/UI/Common/LoadingSpinner.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/UI/Common/PopupField.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/Sources/UI/Common/Alert.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -21,6 +27,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/FollowPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Challenge 1/Scripts/PlayerControllerX.cs" />
+        <option value="$PROJECT_DIR$/Library/PackageCache/com.unity.package-manager-ui@2.0.7/Editor/AssemblyInfo.cs" />
       </list>
     </option>
   </component>
@@ -78,6 +85,7 @@
       <workItem from="1600579023062" duration="4690000" />
       <workItem from="1600639797675" duration="2557000" />
       <workItem from="1600644424075" duration="152000" />
+      <workItem from="1600645040022" duration="3266000" />
     </task>
     <servers />
   </component>
