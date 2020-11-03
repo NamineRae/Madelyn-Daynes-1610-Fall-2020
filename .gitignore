@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Mm]emoryCaptures/
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
@@ -59,18 +59,4 @@ sysinfo.txt
 crashlytics-build.properties
 
 
-Create With Code/Library/
 
-Prototype 2 Feed the Animals/Library/
-
-Prototype 2 Feed the Animals/Assets/
-
-Fall 2020 Personal Project/Library/Artifacts/
-
-Fall 2020 Personal Project/Library/PackageCache/
-
-Fall 2020 Personal Project/Library/
-
-Prototype 3 Run & Jump/Assets/
-
-Prototype 3 Run & Jump/Library/
