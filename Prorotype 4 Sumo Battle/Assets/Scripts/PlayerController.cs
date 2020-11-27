@@ -5,16 +5,23 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private Rigidbody playerRb;
+    private GameObject focalPoint;
+
+    public float speed = 5.0f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerRb = GetComponent<Rigidbody>();
+        focalPoint = GameObject.Find("Focal Point");
     }
 
     // Update is called once per frame
-    /*void Update()
+    void Update()
     {
-        powerUpIndicator.transform.position = transform.position + new Vector3(0, -0.5, 0);
+        float forwardInput = Input.GetAxis("Vertical");
+        playerRb.AddForce(focalPoint.transform.forward * speed * forwardInput);
+        //powerUpIndicator.transform.position = transform.position + new Vector3(0, -0.5, 0);
 
     }
 
@@ -22,10 +29,10 @@ public class PlayerController : MonoBehaviour
     {
         if (collider.CompareTag("PowerUp"))
         {
-            hasPowerUp = true;
+            //hasPowerUp = true;
             Debug.Log("");
             StartCoroutine(PowerUpCountDown());
-            powerUpIndicator.gameObject.SetActive(true);
+           // powerUpIndicator.gameObject.SetActive(true);
         }
     }
 
@@ -33,15 +40,15 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Rigidbody
+            //Rigidbody
         }
     }
 
     IEnumerator PowerUpCountDown()
     {
         yield return new WaitForSeconds(7);
-        hasPowerUp = false;
-        powerUpIndicator.gameObject.SetActive(false);
-    }*/
+        //hasPowerUp = false;
+        //powerUpIndicator.gameObject.SetActive(false);
+    }
 }
 
