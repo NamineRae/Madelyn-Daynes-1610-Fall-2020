@@ -7,8 +7,11 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRb;
     private GameObject focalPoint;
-
     public float speed = 5.0f;
+    public bool hasPowerup = false;
+    private float powerUpStregnth = 15.0f;
+    public GameObject powerupIndicator;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -21,34 +24,39 @@ public class PlayerController : MonoBehaviour
     {
         float forwardInput = Input.GetAxis("Vertical");
         playerRb.AddForce(focalPoint.transform.forward * speed * forwardInput);
-        //powerUpIndicator.transform.position = transform.position + new Vector3(0, -0.5, 0);
+        powerupIndicator.transform.position = transform.position;
+        //I don't know why, but unity won't let me use  "+ new Vector3(0, .5, 0)" here. It doesn't like the .5
 
     }
 
-    private void OnTriggerEnter(Collider collider)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collider.CompareTag("PowerUp"))
+        if (other.CompareTag("Power Up"))
         {
-            //hasPowerUp = true;
-            Debug.Log("");
-            StartCoroutine(PowerUpCountDown());
-           // powerUpIndicator.gameObject.SetActive(true);
+            hasPowerup = true;
+            Destroy(other.gameObject);
+           // Debug.Log("");
+           StartCoroutine(PowerUpCountDownRoutine());
+           powerupIndicator.gameObject.SetActive(true);
         }
+    }
+    
+    IEnumerator PowerUpCountDownRoutine()
+    {
+        yield return new WaitForSeconds(7);
+        hasPowerup = false;
+        powerupIndicator.gameObject.SetActive(false);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") && hasPowerup)
         {
-            //Rigidbody
+            Debug.Log("Player collided with " + collision.gameObject + " with powerup set to " + hasPowerup);
+            Rigidbody enemyRigidbody = collision.gameObject.GetComponent<Rigidbody>();
+            Vector3 awayFromPlayer = collision.gameObject.transform.position - transform.position;
+            enemyRigidbody.AddForce(awayFromPlayer * powerUpStregnth, ForceMode.Impulse);
         }
-    }
-
-    IEnumerator PowerUpCountDown()
-    {
-        yield return new WaitForSeconds(7);
-        //hasPowerUp = false;
-        //powerUpIndicator.gameObject.SetActive(false);
     }
 }
 
