@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         powerUpIndicator.transform.position = transform.position + new Vector3(0, -0.5, 0);
 
@@ -42,6 +42,6 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(7);
         hasPowerUp = false;
         powerUpIndicator.gameObject.SetActive(false);
-    }
+    }*/
 }
 
