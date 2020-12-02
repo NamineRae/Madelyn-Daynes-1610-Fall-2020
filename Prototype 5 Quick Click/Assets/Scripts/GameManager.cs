@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    IEnumerator SpawnTarget()
+   /* IEnumerator SpawnTarget()
     {
         while (true)
         {
@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
             int index = Random.Range(0, targets.Count);
             Instantiate(targets<index>);
         }
-    }
+    }*/
 
     // Update is called once per frame
     void Update()
