@@ -5,7 +5,7 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     private Rigidbody targetRb;
-    private float minSpeed = 12, maxSpeed = 16, maxTorque = 10, xRange = 4, ySpawnPos = -6;
+    private float minSpeed = 12, maxSpeed = 16, maxTorque = 10, xRange = 4, ySpawnPos = -2;
     private GameManager gameManager;
     public int pointValue;
     
@@ -17,12 +17,12 @@ public class Target : MonoBehaviour
         targetRb.AddTorque(RandomTorque(), RandomTorque(), RandomTorque());
         transform.position = RandomSpawnPos();
         //Random.Range(-10, 10), ForceMode.Impulse);
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>;
+        //gameManager = GameObject.Find("GameManager").GetComponent<GameManager>;
     }
 
     Vector3 RandomForce()
     {
-        return Vector3.up * Random.Range(minSpeed,maxSpeed);
+        return Vector3.up * Random.Range(minSpeed, maxSpeed);
     }
 
     float RandomTorque()
@@ -38,7 +38,7 @@ public class Target : MonoBehaviour
     private void OnMouseDown()
     {
         Destroy(gameObject);
-        Instantiate(exposioinParticle, transform.position, exposioinParticle.transform.rotation);
+       // Instantiate(exposioinParticle, transform.position, exposioinParticle.transform.rotation);
         gameManager.UpdateScore(5);
     }
 
