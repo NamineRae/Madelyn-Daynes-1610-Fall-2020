@@ -19,7 +19,7 @@ public class GameManagerX : MonoBehaviour
     private float spawnRate = 1.5f;
     public bool isGameActive;
     public float time = 60;
-    public bool isTimerActive;
+    public bool isTimerActive = false;
 
     private float spaceBetweenSquares = 2.5f;
     private float minValueX = -3.75f; //  x value of the center of the left-most square
@@ -71,7 +71,16 @@ public class GameManagerX : MonoBehaviour
         scoreText.text = "score " + score;
     }
 
-    /*void Update()
+    void DisplayTimer(float timeToDiaplay)
+    {
+        timeToDiaplay += 1;
+        float minutes = Mathf.FloorToInt(time / 60);
+        float seconds = Mathf.FloorToInt(time % 60);
+        timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+    
+    
+    void Update()
     {
         timeText.text = "Time " + time;
         if (isTimerActive)
@@ -79,18 +88,21 @@ public class GameManagerX : MonoBehaviour
             if (time > 0)
             {
                 time -= Time.deltaTime;
-                //return time;
+
+            }
+
+            else
+            {
+                Debug.Log("Time's Up!");
+                time = 0;
+                //isGameActive = false;
+                GameOver();
+                isTimerActive = false;
             }
         }
-        else
-        {
-            //isGameActive = false;
-            //GameOver();
-        }
 
-
-    }*/
-    //I did my best, but even with the help of the internet I can't quite get it to work. But I got close!
+    }
+    //I did my best, but even with the help of the internet I can't quite get it to work. 
 
     // Stop game, bring up game over text and restart button
     public void GameOver()
@@ -117,6 +129,7 @@ public class GameManagerX : MonoBehaviour
         titleScreen.SetActive(false);
         //StartCoroutine(timeCountDown());
         isTimerActive = true;
+        DisplayTimer(time);
 
     }
 }
