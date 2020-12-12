@@ -9,6 +9,7 @@ public class DestroyObjectX : MonoBehaviour
     {
         Destroy(gameObject); // destroy particle when clicked on
         //whoops this was the destroy after two seconds script
+        
     }
 
     private void OnMouseDown()
