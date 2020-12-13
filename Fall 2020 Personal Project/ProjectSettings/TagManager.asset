@@ -8,6 +8,9 @@ TagManager:
   - Key Door
   - Sound Door
   - Riddle Door
+  - Correct
+  - Wrong
+  - Riddle Screen
   layers:
   - Default
   - TransparentFX

@@ -17,21 +17,39 @@ public class KeyPuzzle : MonoBehaviour
         //key = GameObject.Find("Key");
         //keyDoor = GameObject.Find("Key Door");
     }
-
-    // Update is called once per frame
-    void Update()
+    
+  
+    private void OnCollisionEnter(Collision other)
     {
-        
-    }
-
-    //destroy key and set state to enable destruction of door
-    private void OnCollisionEnter()
-    {
-        Destroy.GameObject(key);
-        haveKey = true;
+        //destroy key and set state to enable destruction of door
+        if (other.gameObject.CompareTag("Key"))
+        {
+            Destroy(gameObject); 
+            haveKey = true;
+        } 
+       
+        //destroy door if you have the key
+        if (haveKey = true)
+        {
+            Destroy(keyDoor);
+        }
     }
 
     //destroy door if you have the key
+   /* void Update()
+    {
+        if (other.gameObject.CompareTag("Key Door") && haveKey = true)
+        {
+            Destroy(gameObject);
+        }
+    }
+    void Update()
+    {
+        if (collider.tag == "Key Door" && haveKey = true)
+        {
+            Destroy(gameObject);
+        }
+    }
     private void OnCollisionStay(Collision other)
     {
         if (haveKey = true)
@@ -39,6 +57,5 @@ public class KeyPuzzle : MonoBehaviour
             Destroy.GameObject(keyDoor);
             haveKey = false;
         }
-    }
-
+    }*/
 }
