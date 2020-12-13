@@ -8,7 +8,10 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="FollowPlayer.cs" t="Include" />
+          <e p="KeyPuzzle.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
+          <e p="RiddlePuzzle.cs" t="Include" />
+          <e p="SoundPuzzle.cs" t="Include" />
         </e>
       </e>
       <e p="Fall 2020 Personal Project.sln" t="IncludeFlat" />

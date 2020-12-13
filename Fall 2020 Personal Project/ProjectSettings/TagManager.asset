@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Key
+  - Key Door
+  - Sound Door
+  - Riddle Door
   layers:
   - Default
   - TransparentFX
