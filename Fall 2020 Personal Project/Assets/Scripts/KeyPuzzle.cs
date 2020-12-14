@@ -2,15 +2,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class KeyPuzzle : MonoBehaviour
 {
-    public GameObject key;
+    public IntData keyData;
 
     public GameObject keyDoor;
 
     public bool haveKey;
-  
+
+    public UnityEvent keyEvent;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,10 +21,11 @@ public class KeyPuzzle : MonoBehaviour
     }
     
   
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
+        keyEvent.Invoke(); 
         //destroy key and set state to enable destruction of door
-        if (other.gameObject.CompareTag("Key"))
+        /*if (other.gameObject.CompareTag("Key"))
         {
             Destroy(gameObject); 
             haveKey = true;
@@ -32,7 +35,7 @@ public class KeyPuzzle : MonoBehaviour
         if (haveKey = true)
         {
             Destroy(keyDoor);
-        }
+        }*/
     }
 
     //destroy door if you have the key
